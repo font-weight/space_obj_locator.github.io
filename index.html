@@ -1,0 +1,218 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width">
+	<title>SpaceObjectLocator</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="js/jquery-3.7.1.slim.min.js"></script>
+	<script src="js/highcharts.js"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Space Objects locator</h1>
+	</header>
+	<div class="wrap">
+		<div class="content">
+			<div class="how_works">
+				<h2>How does it work?</h2>
+				<ul>
+					<li>1) Connect to the device and place it facing north;</li>
+					<li>2) Turn on the laser;</li>
+					<li>3) Choose a star, planet or other space object that interests you;</li>
+					<li>4) Enjoy interactive exploration;</li>
+				</ul>
+			</div>
+			<div class="content-page main__page" id="main__page">
+				<h2>What do you want to see?</h2>
+				<div class="menu__body">
+					<a href="#star__page" class="menu__element box_shadow">
+						<img src="star.jpg" alt="">
+						<h2>Stars</h2>
+					</a>
+					<a href="#planet__page" class="menu__element box_shadow">
+						<img src="Planet.jpg" alt="">
+						<h2>Planets</h2>
+					</a>
+					<a href="#comet__page" class="menu__element box_shadow">
+						<img src="comet.jpg" alt="">
+						<h2>Comets</h2>
+					</a>
+				</div>
+			</div>
+
+			<div class="obj-page" id="star__page">
+				<h2>Stars</h2>
+				<div class="menu__object">
+					<div class="objects__element box_shadow"  id="star_1">
+
+						<h2>Betelgeuse</h2>
+					</div>
+					<div class="objects__element box_shadow"  id="star_2">
+
+						<h2>Capella</h2>
+					</div>
+					<div class="objects__element box_shadow"  id="star_3">
+
+						<h2>Arcturus</h2>
+					</div>
+					<div class="objects__element box_shadow"  id="star_4">
+
+						<h2>Procyon</h2>
+					</div>
+					<div class="objects__element box_shadow"  id="star_5">
+
+						<h2>Polaris</h2>
+					</div>
+					<div class="objects__element box_shadow"  id="star_6">
+
+						<h2>Regulus</h2>
+					</div>
+					<div class="objects__element box_shadow"  id="star_7">
+
+						<h2>Altair</h2>
+					</div>
+					<div class="objects__element box_shadow"  id="star_8">
+
+						<h2>Castor</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="obj-page" id="planet__page">
+				<h2>Planets</h2>
+				<div class="menu__object">
+					<div class="objects__element box_shadow"  id="planet_1">
+						<h2>Jupiter</h2>
+					</div>
+					<div class="objects__element box_shadow"  id="planet_2">
+						<h2>Uranus</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="obj-page" id="comet__page">
+				<h2>Comets</h2>
+				<div class="menu__object">
+					<div class="objects__element box_shadow" id="comet_1">
+						<h2>1992UY4</h2>
+					</div>
+					<div class="objects__element box_shadow" id="comet_2">
+
+						<h2>1995BL2</h2>
+					</div>
+					<div class="objects__element box_shadow" id="comet_3">
+
+						<h2>1994PN</h2>
+					</div>
+					<div class="objects__element box_shadow" id="comet_4">
+
+						<h2>1999MM</h2>
+					</div>
+					<div class="objects__element box_shadow" id="comet_5">
+
+						<h2>1999NC5</h2>
+					</div>
+					<div class="objects__element box_shadow" id="comet_6">
+
+						<h2>1999WK11</h2>
+					</div>
+					<div class="objects__element box_shadow" id="comet_7">
+
+						<h2>1989ML</h2>
+					</div>
+					<div class="objects__element box_shadow" id="comet_8">
+
+						<h2>Ganymed</h2>
+					</div>
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+	<script>
+
+
+		const stars = [
+			[5, 55, 7],
+			[5, 16, 45],
+			[14, 15, 19],
+			[7, 39, 5],
+			[2, 31 ,89],
+			[10, 8, 12],
+			[19, 50, 9],
+			[7, 34, 32]
+		]
+
+		const comets = [
+			[11, 7, 4],
+			[8, 45, 38],
+			[9, 8, 18],
+			[10, 54, 9],
+			[15, 55, 14],
+			[5, 22, 20],
+			[10, 13, 12],
+			[21, 48, 39]
+		]
+
+		const planets = [
+			[5, 20, 22],
+			[3, 36, 19]
+		]
+
+		for (let i = 0; i < stars.length; i++) {
+			let star_id = "#star_" + (i + 1);
+			$(star_id).on('click', function () {
+				object_switch(stars[i][0], stars[i][1], stars[i][2])
+			})
+		}
+
+		for (let i = 0; i < planets.length; i++) {
+			let planet_id = "#planet_" + (i + 1);
+			$(planet_id).on('click', function () {
+				object_switch(planets[i][0], planets[i][1], planets[i][2])
+			})
+		}
+
+		for (let i = 0; i < comets.length; i++) {
+			let comet_id = "#comet_" + (i + 1);
+			$(comet_id).on('click', function () {
+				object_switch(comets[i][0], comets[i][1], comets[i][2])
+			})
+		}
+
+		function object_switch(hours, minutes, dec) {
+			var request = new XMLHttpRequest();
+
+			request.open('GET', '/object_switch?hours=' + hours + "&minutes=" + minutes + "&dec=" + dec, true);
+			request.onload = function () {
+				if (request.readyState == 4 && request.status == 200) {
+					var response = request.responseText;
+					
+					if (response == '0') {
+						console.log("zero");
+					} else {
+						console.log("not a zero");
+					}
+
+				}
+			}
+
+			request.send();
+		}
+
+
+	</script>
+</body>
+
+</html>

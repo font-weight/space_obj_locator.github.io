@@ -1,0 +1,285 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+:focus, :active {
+  outline: none; }
+
+a:focus, a:active {
+  outline: none; }
+
+nav, footer, header, aside {
+  display: block; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+input, button, textarea {
+  font-family: inherit; }
+
+input::-ms-clear {
+  display: none; }
+
+button {
+  cursor: pointer; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+a, a:visited {
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: none; }
+
+ul li {
+  list-style: none; }
+
+img {
+  vertical-align: top; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit; }
+
+/*--------------------*/
+
+body {
+  background-color: rgb(250, 250, 250);
+  height: 100vh;
+  position: relative;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  background-color: #193a6b;
+  width: 100%;
+  height: 50px;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  
+}
+
+.wrap {
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1270px;
+  /* position: relative;
+  overflow-x: hidden; */
+  padding-top: 50px;
+}
+
+
+/* ########################################################################################### */
+
+.how_works {
+  font-size: 30px;
+  border-bottom: #000 2px solid;
+  padding: 20px 0 30px;
+  line-height: 40px;
+  margin-bottom: 50px;
+}
+
+.how_works h2 {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+
+.box_shadow {
+  box-shadow: 0 0 5px #a7a7a7;
+}
+
+
+
+/* .content-page h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+} */
+
+
+
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.content-page h2 {
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.content-page {
+  border-bottom: #000 2px solid;
+  margin-bottom: 40px;
+}
+
+
+.menu__body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu__element {
+  display: flex;
+  background-color: #fff;
+  padding: 10px;
+  padding-bottom: 20px;
+  flex: 0 1 32%;
+  /* height: ; */
+  aspect-ratio: 1 / 1;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.menu__element > h2 {
+  position: absolute;
+  top: 20px;
+  color: #fff;
+  left: 30px;
+  font-size: 50px;
+}
+
+.menu__element:hover, .objects__element:hover {
+  box-shadow: 0 0 10px #a7a7a7;
+  text-shadow: 0 0 5px #a7a7a7;
+  
+}
+
+.menu__element img {
+  height: 100%;
+  width: 100%;
+  
+}
+
+.obj-page {
+  border-bottom: #000 2px solid;
+  margin-bottom: 40px;
+}
+
+.obj-page h2 {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.menu__object {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.objects__element {
+  width: 24%;
+  aspect-ratio: 2 / 1;
+  margin-bottom: 20px;
+  background-image: url(fon.jpg);
+  padding: 5px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  /* padding: 10px 10px; */
+  justify-content: center;
+
+}
+
+#comet__page .objects__element {
+  background-image: url(fon_2.jpg);
+}
+
+#planet_1 {
+  background-image: url(jupiter.jpg);
+}
+
+#planet_2 {
+  background-image: url(uranus.jpg);
+}
+
+#planet__page .objects__element {
+  /* width: 40%; */
+  width: 49%;
+  aspect-ratio: 2 / 1;
+  background-size:100% 100%;
+}
+
+
+
+.objects__element h2 {
+  display: block;
+  font-size: 50px;
+  color: #fff;
+}
+
+
+
+
+
+@media (max-width: 1260px) {
+  .objects__element {
+    width: 32%;
+  }
+  
+}
+
+@media (max-width: 850px) {
+  .menu__body, .relay__set {
+    flex-direction: column;
+  }
+
+
+}
+
+@media (max-width: 960px) {
+  .objects__element {
+    width: 49%;
+  }
+
+ 
+}
+
+@media (max-width: 640px) {
+  .objects__element, #planet__page .objects__element {
+    width: 98%;
+    
+  }
+}
+
